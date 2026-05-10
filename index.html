@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYMVION — Business Plan 2025–2028</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --ink-mid: #3d3d5c;
+    --ink-light: #6b6b8a;
+    --accent: #2563a8;
+    --accent-light: #e8f0fb;
+    --accent-mid: #4a80c4;
+    --gold: #c49a28;
+    --gold-light: #fdf6e3;
+    --teal: #0f7c6e;
+    --teal-light: #e6f5f3;
+    --coral: #c0392b;
+    --coral-light: #fcecea;
+    --border: #e2e2ec;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --page-max: 820px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--bg);
+  }
+
+  /* ── Cover Page ── */
+  .cover {
+    background: var(--ink);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: 80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .cover-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 32px;
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.55);
+    max-width: 460px;
+    line-height: 1.6;
+    margin-bottom: 64px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+  .cover-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--teal) 50%, var(--gold) 100%);
+  }
+
+  /* ── Layout ── */
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+
+  /* ── Section Headers ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 64px 0;
+  }
+
+  /* ── Typography ── */
+  h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 36px 0 12px;
+  }
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin: 28px 0 10px;
+  }
+  p { color: var(--ink-mid); margin-bottom: 14px; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Callout / Highlight Box ── */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-light);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 28px 0;
+  }
+  .callout.gold { border-color: var(--gold); background: var(--gold-light); }
+  .callout.teal { border-color: var(--teal); background: var(--teal-light); }
+  .callout.coral { border-color: var(--coral); background: var(--coral-light); }
+  .callout p { margin: 0; font-size: 14px; color: var(--ink-mid); }
+  .callout strong { color: var(--ink); }
+
+  /* ── Cards Grid ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+  }
+  .card-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .card-icon.blue { background: var(--accent-light); }
+  .card-icon.teal { background: var(--teal-light); }
+  .card-icon.gold { background: var(--gold-light); }
+  .card-icon.coral { background: var(--coral-light); }
+  .card h5 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .card p { font-size: 13px; margin: 0; color: var(--ink-light); }
+
+  /* ── Revenue / Stats ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .stat {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label { font-size: 12px; color: var(--ink-light); }
+  .stat-sub { font-size: 11px; color: var(--accent); font-weight: 600; margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* ── Process Steps ── */
+  .process {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 24px 0;
+    position: relative;
+  }
+  .process::before {
+    content: '';
+    position: absolute;
+    left: 19px; top: 20px; bottom: 20px;
+    width: 1px;
+    background: var(--border);
+  }
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    align-items: flex-start;
+    position: relative;
+  }
+  .step-num {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step.active .step-num {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .step-content h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .step-content p { font-size: 13px; margin: 0; color: var(--ink-light); }
+
+  /* ── Revenue Table ── */
+  .rev-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .rev-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .rev-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-mid);
+    vertical-align: top;
+  }
+  .rev-table tr:last-child td { border-bottom: none; }
+  .rev-table .from { font-weight: 600; color: var(--ink); font-size: 13px; }
+  .rev-table .amount { font-weight: 600; color: var(--teal); white-space: nowrap; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge.blue { background: var(--accent-light); color: var(--accent); }
+  .badge.teal { background: var(--teal-light); color: var(--teal); }
+  .badge.gold { background: var(--gold-light); color: var(--gold); }
+
+  /* ── Year Plan ── */
+  .year-block {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+  .year-header {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .year-header.y1 { background: var(--accent-light); border-bottom: 1px solid #c8d9f0; }
+  .year-header.y2 { background: var(--teal-light); border-bottom: 1px solid #b3ddd7; }
+  .year-header.y3 { background: var(--gold-light); border-bottom: 1px solid #ecd9a0; }
+  .year-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .year-tagline { font-size: 13px; color: var(--ink-light); margin-top: 2px; }
+  .year-target {
+    text-align: right;
+  }
+  .year-target .amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--ink);
+  }
+  .year-target .label { font-size: 11px; color: var(--ink-light); }
+  .year-body {
+    padding: 24px 28px;
+    background: var(--white);
+  }
+  .milestone-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .milestone-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: var(--ink-mid);
+  }
+  .milestone-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .milestone-list.teal li::before { color: var(--teal); }
+  .milestone-list.gold li::before { color: var(--gold); }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .kpi { text-align: center; }
+  .kpi .num { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--ink); }
+  .kpi .desc { font-size: 11px; color: var(--ink-light); }
+
+  /* ── Target Groups ── */
+  .target-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .target-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .target-card .sector {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .target-card h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .target-card p { font-size: 13px; color: var(--ink-light); margin: 0; }
+  .target-card .pain { font-size: 12px; color: var(--coral); margin-top: 8px; font-weight: 500; }
+
+  /* ── Risk Table ── */
+  .risk-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+  .risk-desc { font-size: 13px; color: var(--ink-light); }
+  .risk-level {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .risk-level.high { background: #fcecea; color: #c0392b; }
+  .risk-level.med  { background: #fdf6e3; color: #c49a28; }
+  .risk-level.low  { background: var(--teal-light); color: var(--teal); }
+
+  /* ── Funding ── */
+  .fund-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .fund-item {
+    display: flex;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    align-items: flex-start;
+  }
+  .fund-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .fund-dot.blue { background: var(--accent); }
+  .fund-dot.teal { background: var(--teal); }
+  .fund-dot.gold { background: var(--gold); }
+  .fund-name { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+  .fund-desc { font-size: 13px; color: var(--ink-light); }
+  .fund-amount { font-size: 12px; font-weight: 600; color: var(--teal); margin-top: 4px; }
+
+  /* ── Footer ── */
+  .doc-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin: 48px 0;
+  }
+  .toc h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 14px;
+    color: var(--ink-mid);
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-item .num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+    min-width: 24px;
+  }
+
+  @media print {
+    .cover { page-break-after: always; }
+    .page { padding: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<div class="cover">
+  <div class="cover-tag">Confidential Business Plan · Greece · 2025–2028</div>
+  <h1>SYM<br>VION</h1>
+  <p class="cover-sub">Bridging the gap between businesses that need software solutions and technology providers that build them — through expert business analysis.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Domain</label>
+      <span>B2B Software Business Analysis</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Market</label>
+      <span>Greece / Southeast Europe</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Stage</label>
+      <span>Pre-Seed / Bootstrap</span>
+    </div>
+  </div>
+  <div class="cover-bar"></div>
+</div>
+
+<!-- ══════════════════════ PAGE ══════════════════════ -->
+<div class="page">
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <div class="toc-item"><span class="num">01</span><span>Executive Summary</span></div>
+    <div class="toc-item"><span class="num">02</span><span>Value Proposition &amp; The Problem We Solve</span></div>
+    <div class="toc-item"><span class="num">03</span><span>How SYMVION Works — Service Flow</span></div>
+    <div class="toc-item"><span class="num">04</span><span>Revenue Model — Who Pays and How Much</span></div>
+    <div class="toc-item"><span class="num">05</span><span>Target Groups &amp; Business Cases</span></div>
+    <div class="toc-item"><span class="num">06</span><span>Greek Market Context</span></div>
+    <div class="toc-item"><span class="num">07</span><span>3-Year Operational Plan</span></div>
+    <div class="toc-item"><span class="num">08</span><span>Funding Opportunities</span></div>
+    <div class="toc-item"><span class="num">09</span><span>Risks &amp; Mitigation</span></div>
+  </div>
+
+  <!-- ════════════ 01 EXECUTIVE SUMMARY ════════════ -->
+  <div class="section-label">01 · Executive Summary</div>
+  <h2 class="section-title">What is SYMVION?</h2>
+
+  <p>SYMVION is a <strong>B2B software business analysis consultancy</strong> based in Greece. It operates as a trusted connector between two underserved groups: businesses that need software solutions but lack the internal expertise to define and procure them — and technology providers (software houses, SaaS vendors, ERP resellers) that struggle to reach qualified, well-scoped client leads.</p>
+
+  <p>SYMVION's core value is its analytical layer. Rather than functioning as a simple marketplace or directory, SYMVION employs experienced software developer–business analysts who invest time in understanding a client's real business problems, translate those needs into formal, structured Business Case documents, and then act as a bridge facilitating first contact and initial implementation support with the most suitable technology partners.</p>
+
+  <div class="callout">
+    <p><strong>The founding team:</strong> Two software developer–business analysts with direct experience in both technology and business operations. This dual expertise is the company's primary competitive advantage — SYMVION speaks both the language of business and the language of software.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-value">700K+</div>
+      <div class="stat-label">SMEs in Greece</div>
+      <div class="stat-sub">Primary market</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">&lt;15%</div>
+      <div class="stat-label">With dedicated IT staff</div>
+      <div class="stat-sub">The gap SYMVION fills</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">€30.5B</div>
+      <div class="stat-label">EU Recovery Funds to Greece</div>
+      <div class="stat-sub">Digital transformation grants</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 02 VALUE PROPOSITION ════════════ -->
+  <div class="section-label">02 · Value Proposition</div>
+  <h2 class="section-title">The Problem We Solve</h2>
+
+  <p>Greek SMEs are digitally underserved — not because solutions don't exist, but because of a critical translation failure between what businesses need and what technology providers offer. This gap manifests in three recurring failures:</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon blue">🏢</div>
+      <h5>The Business Side</h5>
+      <p>Companies know they have a problem ("our inventory management is broken") but cannot translate it into a software brief. They fear overspending, being oversold, or buying the wrong solution. Most lack internal IT expertise.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon coral">💻</div>
+      <h5>The Technology Side</h5>
+      <p>Software providers receive vague inquiries, waste time on unqualified leads, struggle to estimate correctly without clear specs, and often lose the deal during prolonged discovery. Most lack sales &amp; BA resources.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon gold">⚡</div>
+      <h5>The Gap</h5>
+      <p>No neutral, expert intermediary exists in Greece who can translate between these two worlds fluently — combining business analysis depth with software architecture knowledge.</p>
+    </div>
+  </div>
+
+  <h3>SYMVION's Unique Position</h3>
+  <p>Unlike generic consulting firms or IT service companies with vested product interests, SYMVION is <strong>vendor-neutral</strong>. Its incentive is a successful match, not commission from a single vendor. This neutrality builds trust with SME clients and positions SYMVION as an advisor, not a salesperson.</p>
+
+  <div class="callout teal">
+    <p><strong>Core promise to businesses:</strong> "We turn your business problem into a clear, fundable, actionable software brief — and then connect you with the right provider to solve it."</p>
+  </div>
+  <div class="callout gold">
+    <p><strong>Core promise to tech providers:</strong> "Every lead we send you is pre-qualified, scoped, budgeted, and decision-ready — reducing your sales cycle by 60–80%."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 03 HOW IT WORKS ════════════ -->
+  <div class="section-label">03 · Service Flow</div>
+  <h2 class="section-title">How SYMVION Works</h2>
+
+  <p>SYMVION operates a structured 6-stage service pipeline. Each stage has a defined deliverable, a fee structure, and a clear handoff point. The process is designed to create value at every step — whether or not a deal ultimately closes.</p>
+
+  <div class="process">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h5>Initial Consultation (Free — 60 min)</h5>
+        <p>SYMVION meets the prospective client (in-person or video call) to understand their general situation, pain points, and appetite for change. The goal is to determine whether a full engagement is warranted. No commitment required. This builds trust and generates pipeline.</p>
+      </div>
+    </div>
+    <div class="step active">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h5>Business Discovery Engagement (Paid)</h5>
+        <p>A structured 2–4 session deep-dive into the business. SYMVION maps current workflows, identifies pain points, quantifies inefficiencies, and defines what "success" looks like post-implementation. Deliverable: a signed engagement contract and a working draft of the Business Case. <strong>Fee: €800–€2,000 depending on complexity.</strong></p>
+      </div>
+    </div>
+    <div class="step active">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h5>Business Case Document (Paid — included in step 2)</h5>
+        <p>SYMVION produces a structured, professional Business Case document containing: problem statement, current-state analysis, desired outcomes, functional requirements, non-functional requirements, preliminary budget range, integration needs, timeline expectations, KPIs for success, and risk flags. This document is the company's core deliverable.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h5>Provider Matching &amp; Outreach</h5>
+        <p>SYMVION circulates a sanitised version of the Business Case (protecting client confidentiality) to its curated network of technology providers. SYMVION pre-screens respondents for capability, experience, and fit. A shortlist of 2–3 providers is compiled.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h5>Facilitated First Contact</h5>
+        <p>SYMVION organises and chairs the initial meeting(s) between the client and shortlisted providers. It translates technical proposals back into business language for the client, and clarifies business requirements for the providers. It does not negotiate contracts — its role ends with a signed Letter of Intent between parties.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h5>Phase 1 Implementation Advisory (Optional — Paid Retainer)</h5>
+        <p>For clients who want continued oversight during the first implementation phase (requirements validation, UAT planning, change management), SYMVION offers a retainer model. <strong>Fee: €500–€1,500/month for 3–6 months.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 04 REVENUE MODEL ════════════ -->
+  <div class="section-label">04 · Revenue Model</div>
+  <h2 class="section-title">Who Pays SYMVION, and How Much</h2>
+
+  <p>SYMVION operates a <strong>dual-sided revenue model</strong> — earning from both the demand side (businesses seeking solutions) and the supply side (technology providers seeking qualified clients). This structure is intentional: neither side subsidises the other, and SYMVION's alignment remains with quality outcomes for both.</p>
+
+  <h4>Revenue Stream 1 — Business Clients (Demand Side)</h4>
+  <table class="rev-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Who Pays</th>
+        <th>Amount</th>
+        <th>When</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Business Discovery &amp; Case Document</strong><br><span style="font-size:12px;color:var(--ink-light)">2–4 sessions + formal Business Case</span></td>
+        <td class="from">SME / Business Client</td>
+        <td class="amount">€800–€2,000</td>
+        <td><span class="badge blue">Per project</span></td>
+      </tr>
+      <tr>
+        <td><strong>Phase 1 Advisory Retainer</strong><br><span style="font-size:12px;color:var(--ink-light)">Ongoing BA support during implementation</span></td>
+        <td class="from">SME / Business Client</td>
+        <td class="amount">€500–€1,500/mo</td>
+        <td><span class="badge blue">Monthly</span></td>
+      </tr>
+      <tr>
+        <td><strong>Express Brief (smaller engagements)</strong><br><span style="font-size:12px;color:var(--ink-light)">1-session scoping, lightweight document</span></td>
+        <td class="from">Micro-business / Startup</td>
+        <td class="amount">€350–€600</td>
+        <td><span class="badge blue">Per project</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Revenue Stream 2 — Technology Providers (Supply Side)</h4>
+  <table class="rev-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Who Pays</th>
+        <th>Amount</th>
+        <th>When</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Success Fee (Referral Commission)</strong><br><span style="font-size:12px;color:var(--ink-light)">Paid when a matched client signs with a provider</span></td>
+        <td class="from">Technology Provider</td>
+        <td class="amount">5–8% of contract value</td>
+        <td><span class="badge teal">On success</span></td>
+      </tr>
+      <tr>
+        <td><strong>Preferred Partner Annual Fee</strong><br><span style="font-size:12px;color:var(--ink-light)">Priority matching, co-branding, early access to briefs</span></td>
+        <td class="from">Technology Provider</td>
+        <td class="amount">€1,000–€3,000/yr</td>
+        <td><span class="badge teal">Annual</span></td>
+      </tr>
+      <tr>
+        <td><strong>Qualified Lead Fee</strong><br><span style="font-size:12px;color:var(--ink-light)">Payment for receiving a formal brief, regardless of outcome</span></td>
+        <td class="from">Technology Provider</td>
+        <td class="amount">€150–€400 per brief</td>
+        <td><span class="badge teal">Per delivery</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p><strong>Revenue logic for Year 1:</strong> Prioritise client-side fees (predictable, upfront, relationship-building). In Year 2+, grow the tech-provider side as the network matures. By Year 3, the ideal revenue split is approximately 45% client fees, 40% success/referral fees, 15% partner fees — creating a resilient, diversified income base.</p>
+  </div>
+
+  <h3>Illustrative Revenue Per Engagement</h3>
+  <p>Consider a mid-sized Greek manufacturing company that needs an ERP system. SYMVION runs a full engagement:</p>
+
+  <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--ink);margin-bottom:4px;">€1,400</div>
+      <div style="font-size:12px;color:var(--ink-light);">Business Discovery &amp; Case (Step 2)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--ink);margin-bottom:4px;">€300</div>
+      <div style="font-size:12px;color:var(--ink-light);">Qualified Lead Fee from 2 providers</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--ink);margin-bottom:4px;">€2,400</div>
+      <div style="font-size:12px;color:var(--ink-light);">6% success fee on a €40K ERP contract</div>
+    </div>
+    <div class="card" style="text-align:center;border: 1px solid var(--teal);background:var(--teal-light);">
+      <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--teal);margin-bottom:4px;">€4,100</div>
+      <div style="font-size:12px;color:var(--teal);">Total from one engagement</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 05 TARGET GROUPS ════════════ -->
+  <div class="section-label">05 · Target Groups</div>
+  <h2 class="section-title">Who SYMVION Serves — Business Cases</h2>
+
+  <p>SYMVION focuses on <strong>Greek SMEs with 10–200 employees</strong> in industries that are digitally underserved but have clear, recurring software needs. Below are the primary target sectors with representative business cases.</p>
+
+  <div class="target-grid">
+    <div class="target-card">
+      <div class="sector">Manufacturing &amp; Production</div>
+      <h5>Family-run manufacturing companies</h5>
+      <p>Typically 20–150 employees, operating on spreadsheets or legacy software. Common needs: ERP systems, inventory management, quality control tracking, production scheduling, and supplier management portals.</p>
+      <p class="pain">Pain: "We have no idea what's in our warehouse in real time. We lose money every month on over-ordering."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Hospitality &amp; Tourism</div>
+      <h5>Hotels, resorts, restaurant groups</h5>
+      <p>Greece's largest sector. Needs: Property Management Systems (PMS), booking engine integrations, F&B management, revenue management tools, and guest experience platforms. Many still use paper-based or outdated systems.</p>
+      <p class="pain">Pain: "Our booking system doesn't talk to our accounting software. Reconciliation takes 3 days every month."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Healthcare &amp; Clinics</div>
+      <h5>Private clinics, diagnostic labs, dental groups</h5>
+      <p>Rapidly digitising sector post-COVID. Needs: Electronic Medical Records (EMR), appointment scheduling, GDPR-compliant patient portals, billing and insurance claim management, and lab result integrations.</p>
+      <p class="pain">Pain: "Patients call to book, a receptionist writes it in a notebook, and we lose 30% of appointments to no-shows with no reminder system."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Retail &amp; E-Commerce</div>
+      <h5>Brick-and-mortar retailers going digital</h5>
+      <p>Traditional retail businesses attempting omnichannel transformation. Needs: POS integration, e-commerce platforms, CRM &amp; loyalty systems, inventory sync across channels, and analytics dashboards.</p>
+      <p class="pain">Pain: "We have a physical store and a website but they don't share inventory. We oversell online constantly."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Logistics &amp; Transport</div>
+      <h5>Regional freight &amp; distribution companies</h5>
+      <p>Growing sector with EU trade activity. Needs: Fleet management systems, route optimisation, last-mile delivery tracking, warehouse management, and customer-facing tracking portals.</p>
+      <p class="pain">Pain: "Customers call us 20 times a day asking where their delivery is. We have no live tracking system."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Professional Services</div>
+      <h5>Accounting firms, law offices, architects</h5>
+      <p>Knowledge-intensive businesses with high document volume. Needs: Document management systems, project &amp; time tracking, CRM for client pipeline, client portals, and digital signature workflows.</p>
+      <p class="pain">Pain: "We have 12,000 client documents in folders. We can't find anything. Every audit is a crisis."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Agri-Food &amp; Agriculture</div>
+      <h5>Cooperative farms, food producers, exporters</h5>
+      <p>A major Greek sector accessing EU subsidies and export markets. Needs: Traceability software, production planning, compliance documentation (for EU/export markets), and IoT integration for precision farming.</p>
+      <p class="pain">Pain: "Our olive oil is exported to 8 countries but we have no traceability system. Supermarkets are starting to require it."</p>
+    </div>
+    <div class="target-card">
+      <div class="sector">Technology Providers (Supply Side)</div>
+      <h5>Software houses, SaaS vendors, ERP resellers</h5>
+      <p>Greek and international companies looking to grow their Greek client base. They value SYMVION's pre-qualified leads, clear specs, and trusted client relationships. SYMVION is their outsourced sales development and pre-sales BA function.</p>
+      <p class="pain">Pain: "We waste 40 hours scoping projects that never start. We need clients who already know what they want."</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 06 MARKET CONTEXT ════════════ -->
+  <div class="section-label">06 · Greek Market Context</div>
+  <h2 class="section-title">Why Greece, Why Now</h2>
+
+  <p>Greece is experiencing a structural inflection point in digital transformation — with government policy, EU funding, and market maturation aligning simultaneously to create exceptional opportunity for a service like SYMVION.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon blue">🇪🇺</div>
+      <h5>EU Digital Funding Surge</h5>
+      <p>Greece's Recovery &amp; Resilience Plan (RRP) allocates over €6.8B to digital transformation. ESPA 2021–2027 includes targeted SME digitisation programs. Many businesses are actively seeking to spend this funding — but need help defining what to spend it on.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon teal">📊</div>
+      <h5>Low Digital Maturity = High Demand</h5>
+      <p>Greece ranks 25th out of 27 EU member states on the DESI (Digital Economy &amp; Society Index). This is not a sign of disinterest — it's a sign of untapped demand. The market gap is enormous and relatively uncontested.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon gold">🌐</div>
+      <h5>Language &amp; Cultural Barrier</h5>
+      <p>International SaaS vendors struggle to reach Greek SMEs due to language gaps, pricing mismatches, and lack of local trust. SYMVION's local presence and cultural fluency becomes a critical enabler for both sides.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon coral">🏛️</div>
+      <h5>Startup Ecosystem Growth</h5>
+      <p>Athens and Thessaloniki have developed vibrant tech communities (Found.ation, Corallia, Velocity.Partners, etc.). SYMVION can leverage these networks for both talent, credibility, and tech provider partnerships from day one.</p>
+    </div>
+  </div>
+
+  <div class="callout teal">
+    <p><strong>Strategic timing advantage:</strong> Greece is approximately 3–5 years behind Northern European markets in B2B software adoption curves. This means SYMVION can build a dominant position before the market matures and competition intensifies — at significantly lower customer acquisition cost.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 07 THREE-YEAR PLAN ════════════ -->
+  <div class="section-label">07 · Operational Roadmap</div>
+  <h2 class="section-title">3-Year Plan for Profitability</h2>
+
+  <p>SYMVION's growth is staged into three distinct phases, each building on the last. The model is designed to be <strong>capital-light in Year 1</strong>, leveraging the founders' expertise and a minimal cost structure to reach profitability before significant investment or hiring is required.</p>
+
+  <!-- YEAR 1 -->
+  <div class="year-block">
+    <div class="year-header y1">
+      <div>
+        <div class="year-title">Year 1 — Foundation</div>
+        <div class="year-tagline">Months 1–12 · 2 founders · Bootstrap mode</div>
+      </div>
+      <div class="year-target">
+        <div class="amount">€45–65K</div>
+        <div class="label">Revenue target (break-even)</div>
+      </div>
+    </div>
+    <div class="year-body">
+      <h4>Core Priorities</h4>
+      <ul class="milestone-list">
+        <li><strong>Months 1–2:</strong> Legal setup (IKE or EPE company form), accounting, website, LinkedIn presence, email suite. Apply for <em>Elevate Greece</em> startup grant and any available ESPA pre-seed programs immediately.</li>
+        <li><strong>Months 1–3:</strong> Build the core methodology — standardise the Business Discovery process, create document templates, define the provider network onboarding process. These assets are the intellectual capital of the company.</li>
+        <li><strong>Months 2–6:</strong> Active outreach to 2 primary target verticals (recommend: Manufacturing + Healthcare). Use founders' existing professional networks first. Target local chambers of commerce (ΣΒΒΕ, ΕΒΕΑ) for credibility and lead generation.</li>
+        <li><strong>Months 3–9:</strong> Build a tech provider network of at least 20 vetted partners across categories (ERP, CRM, Custom Dev, SaaS). Offer the first 5 partnerships free (in exchange for case study rights). Sign Preferred Partner agreements with 3–5 companies by month 6.</li>
+        <li><strong>Months 6–9:</strong> Complete first 5 paid Business Discovery engagements. Collect testimonials. Publish case studies (anonymised). Submit one co-authored article to a Greek business publication (e.g., <em>Naftemporiki</em>, <em>Insider.gr</em>).</li>
+        <li><strong>Months 9–12:</strong> Aim for first 2–3 successful matches (client signs with provider). Collect success fees. Evaluate whether an advisory retainer can be sold to any of the matched clients. Review pricing and adjust based on market feedback.</li>
+        <li><strong>Throughout Year 1:</strong> Track every engagement metric obsessively — conversion rates, time-per-engagement, client satisfaction, provider response rates. These metrics will define Year 2 strategy.</li>
+      </ul>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="num" style="color:var(--accent)">8–12</div>
+          <div class="desc">Paid Business Cases completed</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--accent)">20+</div>
+          <div class="desc">Tech providers in network</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--accent)">3–4</div>
+          <div class="desc">Successful client–provider matches</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:20px;">
+        <p><strong>Budget reality check:</strong> With 2 founders and minimal overhead (home office or co-working), monthly costs can be held to €2,000–€3,500 (company costs, software tools, marketing). At 1 paid Business Case per month at €1,200 average, SYMVION nearly covers its costs from day one. Two cases per month and the company is profitable from Month 3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- YEAR 2 -->
+  <div class="year-block">
+    <div class="year-header y2">
+      <div>
+        <div class="year-title">Year 2 — Growth</div>
+        <div class="year-tagline">Months 13–24 · First hire · Sector specialisation</div>
+      </div>
+      <div class="year-target">
+        <div class="amount">€150–220K</div>
+        <div class="label">Revenue target</div>
+      </div>
+    </div>
+    <div class="year-body">
+      <h4>Core Priorities</h4>
+      <ul class="milestone-list teal">
+        <li><strong>Month 13–15:</strong> Hire one junior Business Analyst (part-time or full-time). Use Year 1 revenues to fund this without external capital. The junior BA handles smaller engagements and Express Briefs, freeing the founders to focus on complex cases and business development.</li>
+        <li><strong>Month 13–18:</strong> Systematise operations — build a CRM for lead tracking, create a structured onboarding process for both clients and providers, develop a provider portal (could be a simple Notion or Airtable initially) where partners receive and respond to sanitised briefs.</li>
+        <li><strong>Month 14–20:</strong> Select 2–3 industry verticals to dominate. Develop deep vertical expertise (templates, case studies, provider shortlists, regulatory knowledge). Recommended focus: Manufacturing + Hospitality + Healthcare based on Greek market size and digital readiness.</li>
+        <li><strong>Month 16–24:</strong> Begin content marketing — publish a monthly "Digital Transformation in Greek SMEs" newsletter. Write guides such as "How to choose an ERP for a Greek manufacturing company." Establish authority and generate inbound leads. Target 50% inbound vs. 50% outbound by end of Year 2.</li>
+        <li><strong>Month 18–24:</strong> Launch an annual Preferred Partner program formally — charge €1,500–€3,000/year for 10–15 partners. This creates recurring revenue independent of project success.</li>
+        <li><strong>Month 20–24:</strong> Apply for EU co-funded programs that could partially fund a digital platform (a structured matching portal). Begin scoping a light web application that automates parts of the brief delivery and provider response process.</li>
+        <li><strong>Throughout Year 2:</strong> Aim for a referral rate of ≥30% — meaning at least 1 in 3 new clients comes from a referral from a past client or partner. This is the primary indicator of service quality and market fit.</li>
+      </ul>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="num" style="color:var(--teal)">25–35</div>
+          <div class="desc">Business Cases completed</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--teal)">10–15</div>
+          <div class="desc">Successful matches / deals closed</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--teal)">3</div>
+          <div class="desc">Full-time team members</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YEAR 3 -->
+  <div class="year-block">
+    <div class="year-header y3">
+      <div>
+        <div class="year-title">Year 3 — Scale &amp; Profitability</div>
+        <div class="year-tagline">Months 25–36 · Platform, team, and regional expansion</div>
+      </div>
+      <div class="year-target">
+        <div class="amount">€380–550K</div>
+        <div class="label">Revenue target · 20–25% EBITDA</div>
+      </div>
+    </div>
+    <div class="year-body">
+      <h4>Core Priorities</h4>
+      <ul class="milestone-list gold">
+        <li><strong>Month 25–30:</strong> Grow the team to 5–6 people: 2 senior BAs (founders), 2 junior BAs, 1 business development specialist, 1 part-time marketing/content role. Structured onboarding and internal knowledge management become critical at this scale.</li>
+        <li><strong>Month 25–33:</strong> Launch a <strong>SYMVION Digital Platform</strong> — a lightweight, gated web portal where vetted tech providers can browse and respond to anonymised project briefs. This shifts SYMVION from pure consultancy toward a platform model, improving margins and scalability. Requires €30–60K investment (can be partially EU-funded).</li>
+        <li><strong>Month 28–36:</strong> Explore geographic expansion — Cyprus is the logical first step (shared language, similar regulatory environment, active tourism sector). Bulgaria and Romania represent larger, faster-growing markets for a second phase. A partnership model (local BA partner + SYMVION brand/methodology) minimises risk.</li>
+        <li><strong>Month 30–36:</strong> Develop a <strong>SYMVION Certification Program</strong> for tech providers — a paid annual accreditation that signals quality to SYMVION clients. 20 certified providers at €2,500/year = €50K ARR with near-zero delivery cost.</li>
+        <li><strong>Month 32–36:</strong> Position the company for either a Series A investment round (if platform trajectory is clear) or a profitable self-sustaining consultancy. EBITDA margin of 20–25% is achievable at this scale with controlled overhead.</li>
+        <li><strong>Strategic optionality:</strong> By Year 3, SYMVION has a choice — remain a high-quality boutique BA firm (maximum €1–2M revenue, 3–4 founders, excellent lifestyle business) or pursue the platform model seriously (requires €500K–1M investment, team of 15+, potential €10M+ revenue at scale). This decision should be made at the end of Year 2, based on platform traction data.</li>
+      </ul>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="num" style="color:var(--gold)">60–90</div>
+          <div class="desc">Business Cases completed in Y3</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--gold)">€20–25K</div>
+          <div class="desc">Average revenue per engagement</div>
+        </div>
+        <div class="kpi">
+          <div class="num" style="color:var(--gold)">5–6</div>
+          <div class="desc">Full-time team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 08 FUNDING ════════════ -->
+  <div class="section-label">08 · Funding Opportunities</div>
+  <h2 class="section-title">External Capital Sources</h2>
+
+  <p>While SYMVION is designed to be bootstrappable from day one, several Greek and European funding programs are relevant and should be actively pursued from the first month of operation. These can accelerate growth without diluting equity.</p>
+
+  <h4>Greek Government &amp; EU Programs</h4>
+  <div class="fund-grid">
+    <div class="fund-item">
+      <div class="fund-dot blue"></div>
+      <div>
+        <div class="fund-name">Elevate Greece</div>
+        <div class="fund-desc">Official Greek startup registry and funding program. Registration provides credibility, access to investors, and eligibility for additional programs. Apply in Month 1.</div>
+        <div class="fund-amount">Non-dilutive · Grant access</div>
+      </div>
+    </div>
+    <div class="fund-item">
+      <div class="fund-dot blue"></div>
+      <div>
+        <div class="fund-name">ESPA 2021–2027 — "Ψηφιακή Μεταφορά / Digital Transformation" SME program</div>
+        <div class="fund-desc">Greek co-funded EU programs offering grants of €50,000–€250,000 for SME digitisation projects. SYMVION can help its own clients access this funding — and position itself as a "grant-ready" facilitator, which is a powerful sales tool.</div>
+        <div class="fund-amount">€50K–€250K per grant · 50–90% subsidy rate</div>
+      </div>
+    </div>
+    <div class="fund-item">
+      <div class="fund-dot teal"></div>
+      <div>
+        <div class="fund-name">Recovery &amp; Resilience Facility (RRF) — Ελλάδα 2.0</div>
+        <div class="fund-desc">The Greek recovery plan funds specific digital transformation pillars. Several calls are specifically targeted at B2B digital services and consulting, making SYMVION directly eligible for operational grants.</div>
+        <div class="fund-amount">Project-based grants · Check ΕΣΠΑ.gr quarterly</div>
+      </div>
+    </div>
+    <div class="fund-item">
+      <div class="fund-dot teal"></div>
+      <div>
+        <div class="fund-name">Ταμείο Επιχειρηματικότητας (TEPIX II / TANEO)</div>
+        <div class="fund-desc">Greek government venture fund that co-invests with private investors. Relevant when SYMVION seeks its first institutional capital (Year 2–3). Lower dilution than pure private equity.</div>
+        <div class="fund-amount">€50K–€500K co-investment</div>
+      </div>
+    </div>
+  </div>
+
+  <h4>European Innovation Programs</h4>
+  <div class="fund-grid">
+    <div class="fund-item">
+      <div class="fund-dot gold"></div>
+      <div>
+        <div class="fund-name">EIC Accelerator (European Innovation Council)</div>
+        <div class="fund-desc">For high-growth startups with scalable models. Relevant from Year 2 when SYMVION has a platform component and demonstrable traction. Provides both grant and equity investment.</div>
+        <div class="fund-amount">Up to €2.5M grant + €15M equity</div>
+      </div>
+    </div>
+    <div class="fund-item">
+      <div class="fund-dot gold"></div>
+      <div>
+        <div class="fund-name">COSME / SME Instrument (via EEN Greece)</div>
+        <div class="fund-desc">EU program for SME internationalisation and market access. Relevant for SYMVION's Cyprus/Balkans expansion phase in Year 3. Contact Enterprise Europe Network (EEN) Greece from Year 1 for guidance.</div>
+        <div class="fund-amount">€50K–€500K · Various instruments</div>
+      </div>
+    </div>
+  </div>
+
+  <h4>Private &amp; Ecosystem Sources</h4>
+  <div class="fund-grid">
+    <div class="fund-item">
+      <div class="fund-dot blue"></div>
+      <div>
+        <div class="fund-name">Greek Angel Investors &amp; Business Angels Hellas</div>
+        <div class="fund-desc">Network of Greek angel investors. SYMVION's low capital intensity and high margin potential make it attractive to angels who prefer service businesses over deep-tech bets. Seek €50–150K at Year 1/2 boundary if growth exceeds capacity.</div>
+        <div class="fund-amount">€50K–€300K typical ticket · 5–15% dilution</div>
+      </div>
+    </div>
+    <div class="fund-item">
+      <div class="fund-dot teal"></div>
+      <div>
+        <div class="fund-name">Corallia / Found.ation / AIC Incubators</div>
+        <div class="fund-desc">Greek startup incubators and accelerators offering co-working space, mentorship, investor introductions, and sometimes seed capital. Apply to at least one in Month 1–3 — even if not selected, the process sharpens the pitch.</div>
+        <div class="fund-amount">Non-dilutive benefits + potential seed investment</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ 09 RISKS ════════════ -->
+  <div class="section-label">09 · Risks &amp; Mitigation</div>
+  <h2 class="section-title">Key Risks and How to Manage Them</h2>
+
+  <div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">Clients undervalue the analysis phase</div>
+        <div class="risk-desc">SMEs may believe they don't need to pay for "just a document" — they want to jump straight to a solution. Mitigation: Frame the Business Case as insurance against expensive implementation failure. Price it relative to the cost of a bad software decision (typically 10–50× the SYMVION fee). Use case studies demonstrating ROI from day one.</div>
+      </div>
+      <div class="risk-level high">High</div>
+    </div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">Tech providers bypass SYMVION after the first match</div>
+        <div class="risk-desc">A matched provider could attempt to contact SYMVION's clients directly in future engagements, cutting out the referral fee. Mitigation: Use Partner Agreements with explicit non-circumvention clauses. Build the ongoing retainer relationship with clients so SYMVION remains embedded. Diversify across many clients and providers — dependence on any single relationship is the real risk.</div>
+      </div>
+      <div class="risk-level high">High</div>
+    </div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">Slow sales cycles in early months</div>
+        <div class="risk-desc">B2B sales in Greece are relationship-driven and move slowly. The pipeline may be dry for the first 2–3 months. Mitigation: Founders must be extremely proactive in leveraging their personal networks for the first 3–6 clients. Consider offering the first 2–3 Business Cases at a reduced "launch price" of €500 to accelerate trust-building and generate early case studies.</div>
+      </div>
+      <div class="risk-level med">Medium</div>
+    </div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">Founder burnout (small team, wide scope)</div>
+        <div class="risk-desc">With 2 founders handling sales, delivery, and operations simultaneously, bandwidth is a genuine risk — especially if 2+ large engagements run concurrently. Mitigation: Limit active engagements to 3 at a time in Year 1. Use the Express Brief product to maintain revenue during complex engagement periods. Set clear working boundaries and use tools (CRM, templates) aggressively to reduce admin overhead.</div>
+      </div>
+      <div class="risk-level med">Medium</div>
+    </div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">A large consulting firm enters the space</div>
+        <div class="risk-desc">McKinsey, Deloitte, or a Greek consulting firm could develop a similar service. However, they operate at a far higher price point (€10K+ projects), cannot serve SMEs economically, and lack the developer-BA dual expertise that is SYMVION's differentiator. Mitigation: Move fast to build brand recognition, case studies, and a provider network before this becomes a risk (likely 3–5 year window).</div>
+      </div>
+      <div class="risk-level low">Low</div>
+    </div>
+    <div class="risk-item">
+      <div>
+        <div class="risk-title">EU funding programs are delayed or oversubscribed</div>
+        <div class="risk-desc">Greek EU funding programs are notoriously bureaucratic. Success in grant applications is not guaranteed. Mitigation: SYMVION must be designed to succeed without grants. Treat all external funding as acceleration, never as a survival mechanism. Maintain a 3-month cash reserve from Month 3 onward.</div>
+      </div>
+      <div class="risk-level low">Low</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ════════════ CLOSING ════════════ -->
+  <div class="section-label">Summary</div>
+  <h2 class="section-title">Why SYMVION Will Succeed</h2>
+
+  <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="card">
+      <h5>🎯 Timing is right</h5>
+      <p>Greek SMEs are under pressure to digitise — from EU grant requirements, from competitive necessity, from post-COVID operational strain. Demand exists and is growing. The market needs exactly what SYMVION offers, right now.</p>
+    </div>
+    <div class="card">
+      <h5>🧠 Founders are the product</h5>
+      <p>Two software developer–business analysts are the rarest combination in the Greek market. This dual expertise cannot be easily replicated by a pure consultant or a pure technologist. It is SYMVION's moat.</p>
+    </div>
+    <div class="card">
+      <h5>💰 Capital-light by design</h5>
+      <p>The business requires no physical product, no R&D, no inventory. Overhead is minimal. Revenue from the first engagement covers monthly operating costs. This is a business that can reach profitability in 90 days.</p>
+    </div>
+    <div class="card">
+      <h5>🔗 Network effects over time</h5>
+      <p>Every client becomes a testimonial. Every tech provider becomes a referral source. Every successful match generates two happy parties who recommend SYMVION to their networks. The business compounds over time.</p>
+    </div>
+  </div>
+
+  <div class="callout teal" style="margin-top:32px;">
+    <p><strong>The bottom line:</strong> SYMVION is a feasible, well-timed, capital-efficient business that addresses a genuine structural gap in the Greek B2B market. With disciplined execution in Year 1 — focusing on quality over quantity, building deep relationships, and obsessively tracking what works — the company can reach profitability by Month 3–6, generate €150K+ in Year 2, and build a platform-ready business by Year 3. The founders' expertise is the unfair advantage. The strategy is to use it methodically, one client at a time.</p>
+  </div>
+
+</div>
+<!-- ── Footer ── -->
+<div class="doc-footer">
+  SYMVION · Confidential Business Plan · 2025–2028 · All rights reserved
+</div>
+
+</body>
+</html>
