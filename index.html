@@ -12,6 +12,11 @@
     
     <title>SYMVION — Business Analysis & Technology Partner</title>
 
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='favGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%235EEAD4'/%3E%3Cstop offset='100%25' stop-color='%2360A5FA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230B0F19'/%3E%3Cpath d='M50 20 L70 35 L70 65 L50 80 L30 65 L30 35 Z' fill='none' stroke='url(%23favGrad)' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M50 35 L62 42 L62 58 L50 65 L38 58 L38 42 Z' fill='url(%23favGrad)' opacity='0.9'/%3E%3Ccircle cx='50' cy='43' r='4' fill='%230B0F19'/%3E%3C/svg%3E">
+    <!-- Fallback PNG favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGgSURBVFhH7Zc9TsNAEIXf2gkpLShpEKXgDOSIFFycJhWnwA0ocwRuwE24AERJuALgAJwAUFABkhVEKpYIb+KstrzrX67iSKP8JE/esT3zeWbXsQMAfn0F7tEELhPInIEcxDmE44v2WnkbY0wH7l27C9U+5IxEEYj37wVnr2oVlGIrBTH2QQGxKkHhOlgA8k+7djq+BwKge8nGvF2vG46r2/H3fCkFcRzDS4uLmxH+Y25fAQqgslUjAZWzE0nQPIp6fbRfT4LmzNGS0i5lyYVx33MhVyQjCsBvUQQWALXmI9CLqJBQXdqIIgoEknQ9z5GIB3lFvD2AjJvBs6nIyjnpOPpjPADM4NupINBDG0F/OkgSiUAB5NcE+bNhUqA99ktBgr8CgC2Gx58TBYL02UYU8hztlHdAQfG+5A+tGjqgOIY24tPXe6UQ3gFyc9dWCBkDFIY2MiIuHR8hw3HPAAOwjSgQLJRg+Z3B3nHW81pB5H+17qT6CCQ9D19TGyE/vMxXa2Rmfe2DpdJ7DmQsg5P7Vvo/wOiPQAEUw3/fAD7ee8QvwYNHAAAAAElFTkSuQmCC">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -580,58 +585,96 @@
             color: var(--text-main);
         }
 
-        /* ==========================================================================
-           CONTACT FORM
-           ========================================================================== */
-        .contact-wrapper {
-            max-width: 600px;
+        /* ----- Business Readiness Scorecard ----- */
+        .scorecard-wrapper {
+            max-width: 800px;
             margin: 0 auto;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 3rem;
+            padding: 2.5rem;
             backdrop-filter: blur(12px);
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
+        .scorecard-step {
             display: block;
-            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+        .question-item {
+            margin-bottom: 2rem;
+        }
+        .question-item label {
+            display: block;
             font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
-
-        .form-control {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.2);
+        .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .score-option {
+            background: rgba(0,0,0,0.2);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            font-size: 1rem;
+            border-radius: 40px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
             transition: var(--transition-smooth);
+            color: var(--text-muted);
         }
-
-        .form-control:focus {
-            outline: none;
+        .score-option:hover {
             border-color: var(--accent-cyan);
-            background: rgba(0, 0, 0, 0.4);
-            box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.1);
+            background: rgba(94,234,212,0.1);
+            color: var(--text-main);
         }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
+        .score-option.selected {
+            background: var(--accent-cyan);
+            color: var(--bg-color);
+            border-color: var(--accent-cyan);
+            font-weight: 600;
         }
-
-        .btn-submit {
-            width: 100%;
+        .result-card {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .readiness-score {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .action-message {
+            background: rgba(94,234,212,0.08);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid var(--accent-cyan);
+        }
+        .reset-btn {
+            background: transparent;
+            border: 1px solid var(--border);
             margin-top: 1rem;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0 2rem;
+        }
+        .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.875rem; transition: var(--transition-smooth); }
+        .footer-links a:hover { color: var(--text-main); }
+        .footer-bottom { text-align: center; color: var(--text-muted); font-size: 0.875rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        @media (max-width: 600px) { .scorecard-wrapper { padding: 1.5rem; } .option-group { gap: 0.75rem; } .score-option { padding: 0.4rem 1rem; } }
+        
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* ==========================================================================
@@ -699,7 +742,7 @@
                 <a href="#problem" class="nav-link">The Problem</a>
                 <a href="#process" class="nav-link">How it Works</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#contact" class="btn btn-secondary" style="padding: 0.5rem 1.25rem;">Let's Talk</a>
+                <a href="#contact" class="btn btn-secondary" style="padding: 0.5rem 1.25rem;">Get Assessed</a>
             </div>
         </div>
     </nav>
@@ -711,7 +754,7 @@
                 <h1>Bridging Business Vision With <span class="text-gradient">Software Execution.</span></h1>
                 <p>SYMVION transforms complex business needs into structured software solutions and intelligently connects you with the perfect technology partners.</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#contact" class="btn btn-primary">Start Assessment →</a>
                     <a href="#process" class="btn btn-secondary">Explore Process</a>
                 </div>
             </div>
@@ -896,31 +939,14 @@
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Initiate the Process</h2>
-                <p>Ready to structure your software needs and find the right partners? Let's talk.</p>
+                <h2>Business Readiness Scorecard</h2>
+                <p>Answer 4 quick questions to assess your software procurement maturity — and receive an actionable strategy snapshot.</p>
             </div>
-
-            <div class="contact-wrapper reveal">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('This is a production UI. Backend integration required.');">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="company">Company</label>
-                        <input type="text" id="company" class="form-control" placeholder="Acme Corp" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Work Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="jane@acme.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="message">Project Overview / Current Challenge</label>
-                        <textarea id="message" class="form-control" placeholder="We need to build a custom CRM but aren't sure about the specifications..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-submit">Request Consultation</button>
-                    <p class="text-center text-muted" style="margin-top: 1rem; font-size: 0.8rem;">Based in Greece, serving enterprises globally.</p>
-                </form>
+            <div class="scorecard-wrapper reveal" id="scorecardApp">
+                <div id="questionsPanel">
+                </div>
+                <div id="resultPanel" style="display: none;"></div>
+                <div class="text-center" style="margin-top: 1rem;"><small class="text-muted">⚡ Instant strategic insight.</small></div>
             </div>
         </div>
     </section>
@@ -933,9 +959,8 @@
                     <span class="logo-text">SYMVION</span>
                 </a>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/company/symvion" target="_blank">LinkedIn</a>
-                    <a href="mailto:hello@symvion.gr">hello@symvion.gr</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="mailto:symvion.gr@gmail.com">symvion.gr@gmail.com</a>
+                    <a href="#" id="privacyPolicyLink">Privacy Policy</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -943,6 +968,139 @@
             </div>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="privacyContent">
+                <!-- Content loads from privacy.html -->
+                <div style="text-align: center; padding: 3rem;">Loading Privacy Policy...</div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(20px);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, rgba(20, 25, 40, 0.98) 0%, rgba(11, 15, 25, 0.98) 100%);
+            margin: 5% auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 24px;
+            border: 1px solid rgba(94, 234, 212, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: modalFadeIn 0.3s ease;
+            position: relative;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #94A3B8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .modal-close:hover {
+            color: #5EEAD4;
+            background: rgba(94, 234, 212, 0.15);
+            transform: scale(1.1);
+        }
+        #privacyContent {
+            padding: 2.5rem;
+            max-height: 80vh;
+            overflow-y: auto;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        #privacyContent::-webkit-scrollbar {
+            width: 8px;
+        }
+        #privacyContent::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        #privacyContent::-webkit-scrollbar-thumb {
+            background: rgba(94, 234, 212, 0.3);
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .modal-content { margin: 10% auto; width: 95%; }
+            #privacyContent { padding: 1.5rem; }
+        }
+    </style>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('privacyModal');
+        const privacyLink = document.getElementById('privacyPolicyLink');
+        const closeBtn = document.querySelector('.modal-close');
+        const privacyContent = document.getElementById('privacyContent');
+
+        // Open modal and load privacy policy
+        privacyLink.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Load privacy.html content
+            fetch('privacy.html')
+                .then(response => response.text())
+                .then(data => {
+                    // Extract body content
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const bodyContent = doc.body.innerHTML;
+                    privacyContent.innerHTML = bodyContent;
+                })
+                .catch(error => {
+                    privacyContent.innerHTML = `
+                        <div style="text-align: center; padding: 2rem;">
+                            <h2 style="color: #5EEAD4;">Privacy Policy</h2>
+                            <p style="color: #94A3B8; margin-top: 1rem;">Unable to load privacy content. Please check that privacy.html exists in the same directory.</p>
+                            <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #5EEAD4; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
+                        </div>
+                    `;
+                });
+        };
+
+        // Close modal
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        closeBtn.onclick = closeModal;
+        window.onclick = function(e) {
+            if (e.target == modal) closeModal();
+        };
+    </script>
 
     <script>
         // Smooth Navbar Background on Scroll
@@ -983,6 +1141,113 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+
+        // Assessment
+        const questions = [
+            { id: "q1", text: "How clearly defined are your current software requirements?", options: [
+                { value: 1, label: "Vague / Just ideas" }, { value: 2, label: "Some high-level needs" }, { value: 3, label: "Moderately detailed" }, { value: 4, label: "Fully structured spec" } ] },
+            { id: "q2", text: "What's your experience with technology procurement / vendor management?", options: [
+                { value: 1, label: "No prior experience" }, { value: 2, label: "Basic / single vendor" }, { value: 3, label: "Experienced with several vendors" }, { value: 4, label: "Expert; professional procurement" } ] },
+            { id: "q3", text: "Do you have a dedicated budget & timeline estimation for your next software initiative?", options: [
+                { value: 1, label: "No defined budget" }, { value: 2, label: "Rough budget but unclear" }, { value: 3, label: "Clear budget, flexible timeline" }, { value: 4, label: "Fully defined budget & milestones" } ] },
+            { id: "q4", text: "How confident are you in bridging communication between business stakeholders and technical teams?", options: [
+                { value: 1, label: "Frequent misalignment" }, { value: 2, label: "Moderate gaps" }, { value: 3, label: "Clear internal bridge" }, { value: 4, label: "Seamless alignment" } ] }
+        ];
+        
+        let answers = { q1: null, q2: null, q3: null, q4: null };
+        
+        function renderQuestions() {
+            const container = document.getElementById('questionsPanel');
+            if (!container) return;
+            let html = `<div class="scorecard-step">`;
+            questions.forEach((q, idx) => {
+                const selectedVal = answers[q.id];
+                html += `<div class="question-item"><label>${idx+1}. ${q.text}</label><div class="option-group" data-qid="${q.id}">`;
+                q.options.forEach(opt => {
+                    const isSelected = (selectedVal === opt.value);
+                    html += `<div class="score-option ${isSelected ? 'selected' : ''}" data-value="${opt.value}">${opt.label}</div>`;
+                });
+                html += `</div></div>`;
+            });
+            html += `<div style="margin-top: 2rem; text-align: center;"><button id="calculateReadinessBtn" class="btn btn-primary btn-icon">✨ Analyze Readiness ✨</button></div></div>`;
+            container.innerHTML = html;
+            
+            // attach click handlers
+            document.querySelectorAll('.option-group').forEach(group => {
+                const qid = group.dataset.qid;
+                group.querySelectorAll('.score-option').forEach(opt => {
+                    opt.addEventListener('click', (e) => {
+                        const val = parseInt(opt.dataset.value);
+                        answers[qid] = val;
+                        // update ui selection
+                        group.querySelectorAll('.score-option').forEach(el => el.classList.remove('selected'));
+                        opt.classList.add('selected');
+                    });
+                });
+            });
+            const calcBtn = document.getElementById('calculateReadinessBtn');
+            if(calcBtn) calcBtn.addEventListener('click', showResults);
+        }
+        
+        function showResults() {
+            const allAnswered = Object.values(answers).every(v => v !== null);
+            if (!allAnswered) {
+                alert("Please answer all 4 questions to get your readiness score.");
+                return;
+            }
+            const total = answers.q1 + answers.q2 + answers.q3 + answers.q4;
+            const maxScore = 16;
+            const percentage = (total / maxScore) * 100;
+            let level = "", recommendation = "", contactCTA = "";
+            if (percentage <= 35) {
+                level = "Foundation Stage";
+                recommendation = "Your software strategy requires structured business analysis. SYMVION can translate your ideas into technical requirements and de-risk the initial phase with discovery workshops.";
+                contactCTA = "Start with a free 30-min Strategy Mapping call.";
+            } else if (percentage <= 65) {
+                level = "Developing Maturity";
+                recommendation = "You have some clarity, but risk of misalignment remains. Our requirement engineering and technology vendor vetting will bridge the gaps and reduce overruns.";
+                contactCTA = "Let's schedule a Vendor Alignment session.";
+            } else if (percentage <= 85) {
+                level = "Advanced Readiness";
+                recommendation = "Strong internal foundation. To maximize ROI, SYMVION can connect you with elite software partners and provide technical coordination for frictionless execution.";
+                contactCTA = "Explore our B2B matchmaking & implementation oversight.";
+            } else {
+                level = "Optimization Elite";
+                recommendation = "You're ready for strategic tech scaling. SYMVION can act as your independent auditor and innovation advisor to orchestrate complex digital transformations.";
+                contactCTA = "Talk to our senior transformation architects.";
+            }
+            
+            const questionsPanel = document.getElementById('questionsPanel');
+            const resultPanel = document.getElementById('resultPanel');
+            questionsPanel.style.display = 'none';
+            resultPanel.style.display = 'block';
+            resultPanel.innerHTML = `
+                <div class="result-card">
+                    <h3 style="margin-bottom: 1rem;">📊 SYMVION Readiness Index</h3>
+                    <div class="readiness-score">${Math.round(percentage)}%</div>
+                    <div class="text-muted" style="margin: 0.5rem 0;">Maturity Level: <strong style="color:var(--accent-cyan)">${level}</strong></div>
+                    <div class="action-message">
+                        <p style="margin-bottom: 0.75rem;">${recommendation}</p>
+                        <p><strong>🔍 Next Step:</strong> ${contactCTA}</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="mailto:hello@symvion.gr?subject=Readiness Assessment - ${level}" class="btn btn-primary">📧 Request Strategy Brief</a>
+                        <button id="resetScorecardBtn" class="btn reset-btn">⟳ Retake Assessment</button>
+                    </div>
+                    <p class="text-muted" style="margin-top: 1.5rem; font-size:0.8rem;">No email storage — direct expert consultation link.</p>
+                </div>
+            `;
+            document.getElementById('resetScorecardBtn')?.addEventListener('click', () => {
+                answers = { q1: null, q2: null, q3: null, q4: null };
+                questionsPanel.style.display = 'block';
+                resultPanel.style.display = 'none';
+                renderQuestions();
+            });
+        }
+        
+        // Initialize scorecard
+        renderQuestions();
+
     </script>
 </body>
 </html>
